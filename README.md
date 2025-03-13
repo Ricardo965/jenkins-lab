@@ -2,17 +2,13 @@
 
 ## Ejecutar Docker Compose
 
-Para ejecutar Docker Compose, asegúrate de que tengas Docker Compose instalado en tu sistema. Luego, sigue estos pasos:
-
-1. Navega a la ubicación donde se encuentra tu archivo `docker-compose.yml`.
-
-2. Ejecuta el siguiente comando en tu terminal para iniciar los contenedores definidos en el archivo `docker-compose.yml`:
+En la ruta donde está presente el `docker-compose.yml` ejecuto:
 
 ```bash
 docker-compose up -d
 ```
 
-3. Extraer passwords
+3. Para extraer passwords
 
 ```bash
 docker logs id_container
@@ -64,10 +60,11 @@ Y se configura el Build Step de tipo Execute Shell como lo siguiente para hacer 
 ```
 npm install
 npm run build
-nohup node dist/app.js &
+nohup setsid node dist/app.js > output.log 2>&1 < /dev/null &
 ```
 
 Comprobación de la ejecución del pipeline y de la duración:
 
-![Repo](img/Result.png)
-![Repo](img/ResultConsole.png)
+![Result](img/Result.png)
+![Result](img/ResultConsole.png)
+![Result](img/ResultWeb.png)
